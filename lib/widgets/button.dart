@@ -14,6 +14,8 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double parentWidth = MediaQuery.of(context).size.width;
+    double percentWidth = (parentWidth / 100) * 30;
     return Container(
       decoration: BoxDecoration(
         color: bgColor,
@@ -22,7 +24,7 @@ class Button extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(
           vertical: 20,
-          horizontal: 45,
+          horizontal: percentWidth,
         ),
         child: Text(
           text,
