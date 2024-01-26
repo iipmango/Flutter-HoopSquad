@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hoopsquad/widgets/button.dart';
+import 'package:flutter_hoopsquad/widgets/text_button.dart';
 import 'package:flutter_hoopsquad/widgets/text_input.dart';
 
 void main() {
@@ -30,24 +31,29 @@ class App extends StatelessWidget {
                 child: Column(
                   children: [
                     TextInput(
-                      label: "Email",
+                      label: "이메일",
                       obscure: false,
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     TextInput(
-                      label: "Password",
+                      label: "비밀번호",
                       obscure: true,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: percentHeight / 3,
                     ),
                     Button(
-                      text: "Log in",
+                      text: "로그인",
                       bgColor: Color(0xFFF3A241),
                       textColor: Colors.white,
                     ),
+                    Row(children: [
+                      TextBtn(text: "아이디 찾기"),
+                      TextBtn(text: "비밀번호 찾기"),
+                      TextBtn(text: "회원가입"),
+                    ])
                   ],
                 ),
               )

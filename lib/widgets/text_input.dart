@@ -14,12 +14,15 @@ class TextInput extends StatelessWidget {
     return TextField(
       obscureText: obscure,
       decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.black.withOpacity(0.5)),
-          ),
-          labelText: label,
-          labelStyle: TextStyle(color: Colors.black.withOpacity(0.5))),
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.black.withOpacity(0.5)),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.black), // 선택된 상태의 테두리 색상
+        ),
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
+      ),
     );
   }
 }
