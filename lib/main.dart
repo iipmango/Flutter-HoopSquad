@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hoopsquad/widgets/button.dart';
-import 'package:flutter_hoopsquad/widgets/text_button.dart';
-import 'package:flutter_hoopsquad/widgets/text_input.dart';
+import 'package:flutter_hoopsquad/widgets/match_deadline/match_deadline.dart';
+import 'package:flutter_hoopsquad/widgets/topbar/profile.dart';
+import 'package:flutter_hoopsquad/widgets/topbar/topbar.dart';
+import 'package:flutter_hoopsquad/widgets/weather/weather.dart';
 
 void main() {
   runApp(App());
@@ -13,7 +14,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double parentHeight = MediaQuery.of(context).size.height;
-    double percentHeight = (parentHeight / 100) * 30;
+    double percentHeight = (parentHeight / 100) * 20;
+    double parentWidth = MediaQuery.of(context).size.width;
+    double percentWidth = (parentWidth / 100) * 80;
     return MaterialApp(
       home: Scaffold(
         body: Padding(
@@ -26,36 +29,12 @@ class App extends StatelessWidget {
               SizedBox(
                 height: percentHeight,
               ),
-              Flexible(
-                fit: FlexFit.loose,
-                child: Column(
-                  children: [
-                    TextInput(
-                      label: "이메일",
-                      obscure: false,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextInput(
-                      label: "비밀번호",
-                      obscure: true,
-                    ),
-                    SizedBox(
-                      height: percentHeight / 3,
-                    ),
-                    Button(
-                      text: "로그인",
-                      bgColor: Color(0xFFF3A241),
-                      textColor: Colors.white,
-                    ),
-                    Row(children: [
-                      TextBtn(text: "아이디 찾기"),
-                      TextBtn(text: "비밀번호 찾기"),
-                      TextBtn(text: "회원가입"),
-                    ])
-                  ],
-                ),
+              Column(
+                children: [
+                  TopBar(),
+                  Weather(),
+                  MatchDedlineContainer(),
+                ],
               )
             ],
           ),
