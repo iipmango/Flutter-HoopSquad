@@ -26,13 +26,6 @@ class Button extends StatelessWidget {
           vertical: 11,
           horizontal: percentWidth,
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 30,
-          ),
-        ),
       ),
     );
   }
