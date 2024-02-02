@@ -14,14 +14,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double parentHeight = MediaQuery.of(context).size.height;
-    double percentHeight = (parentHeight / 100) * 20;
+    double percentHeight = (parentHeight / 100) * 5;
     double parentWidth = MediaQuery.of(context).size.width;
     double percentWidth = (parentWidth / 100) * 80;
     return MaterialApp(
       home: Scaffold(
         body: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 20,
+            horizontal: 0,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

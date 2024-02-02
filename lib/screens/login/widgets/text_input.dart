@@ -3,16 +3,29 @@ import 'package:flutter/material.dart';
 class TextInput extends StatelessWidget {
   final String label;
   final bool obscure;
-  const TextInput({
+  TextInput({
     super.key,
     required this.label,
     required this.obscure,
   });
 
+  TextEditingController valueController = TextEditingController();
+
+  String getValue() {
+    return valueController.text;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      controller: valueController,
       obscureText: obscure,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter your email / password';
+        }
+        return null;
+      },
       decoration: InputDecoration(
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.black.withOpacity(0.5)),

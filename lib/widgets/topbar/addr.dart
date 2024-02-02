@@ -20,7 +20,16 @@ class _Addr extends State<Addr> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16.0),
-      child: Text('addr'),
+      child: TextButton(
+        onPressed: incrementCounter,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Press Me'),
+            Icon(Icons.arrow_drop_down),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -13,12 +13,15 @@ class TopBar extends StatefulWidget {
 class _TopBarState extends State<TopBar> {
   @override
   Widget build(BuildContext context) {
+    double parentWidth = MediaQuery.of(context).size.width;
+    double percentWidth = (parentWidth / 100) * 33;
     return Container(
-      color: Colors.black,
-      padding: EdgeInsets.all(16.0),
       child: Row(
         children: [
           Addr(),
+          SizedBox(
+            width: percentWidth,
+          ),
           Alarm(),
           Profile(),
         ],

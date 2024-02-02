@@ -19,8 +19,13 @@ class _Alarm extends State<Alarm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
-      child: Text('alarm'),
+      child: TextButton(
+        onPressed: incrementCounter,
+        child: Icon(
+          Icons.notifications,
+          size: 30,
+        ),
+      ),
     );
   }
 }

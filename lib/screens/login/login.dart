@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hoopsquad/screens/login/widgets/btn_under_login.dart';
 import 'package:flutter_hoopsquad/screens/login/widgets/button.dart';
-import 'package:flutter_hoopsquad/screens/login/widgets/text_button.dart';
-import 'package:flutter_hoopsquad/screens/login/widgets/text_input.dart';
+import 'package:flutter_hoopsquad/screens/login/widgets/id_pwd.dart';
 
-void main() {
-  runApp(App());
-}
-
-class App extends StatelessWidget {
-  const App({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +19,7 @@ class App extends StatelessWidget {
             horizontal: 20,
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 height: percentHeight,
@@ -32,40 +28,13 @@ class App extends StatelessWidget {
                 fit: FlexFit.loose,
                 child: Column(
                   children: [
-                    Container(
-                      width: percentWidth,
-                      child: Column(
-                        children: [
-                          TextInput(
-                            label: "이메일",
-                            obscure: false,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextInput(
-                            label: "비밀번호",
-                            obscure: true,
-                          ),
-                          SizedBox(
-                            height: percentHeight / 3,
-                          ),
-                        ],
-                      ),
-                    ),
+                    Input(),
                     Button(
                       text: "로그인",
                       bgColor: Color(0xFFF3A241),
                       textColor: Colors.white,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        TextBtn(text: "아이디 찾기"),
-                        TextBtn(text: "비밀번호 찾기"),
-                        TextBtn(text: "회원가입"),
-                      ],
-                    )
+                    ExtraBtn(),
                   ],
                 ),
               )
